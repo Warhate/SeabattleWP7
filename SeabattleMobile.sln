@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeabattleMobile", "SeabattleMobile\SeabattleMobile\SeabattleMobile.csproj", "{7F063D60-F1C6-40EA-8793-EE6EB552C240}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "SeabattleMobileContent", "SeabattleMobile\SeabattleMobileContent\SeabattleMobileContent.contentproj", "{399660A3-CA10-4451-88FC-4D946B1CB20A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Windows Phone = Debug|Windows Phone
+		Release|Windows Phone = Release|Windows Phone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F063D60-F1C6-40EA-8793-EE6EB552C240}.Debug|Windows Phone.ActiveCfg = Debug|Windows Phone
+		{7F063D60-F1C6-40EA-8793-EE6EB552C240}.Debug|Windows Phone.Build.0 = Debug|Windows Phone
+		{7F063D60-F1C6-40EA-8793-EE6EB552C240}.Debug|Windows Phone.Deploy.0 = Debug|Windows Phone
+		{7F063D60-F1C6-40EA-8793-EE6EB552C240}.Release|Windows Phone.ActiveCfg = Release|Windows Phone
+		{7F063D60-F1C6-40EA-8793-EE6EB552C240}.Release|Windows Phone.Build.0 = Release|Windows Phone
+		{7F063D60-F1C6-40EA-8793-EE6EB552C240}.Release|Windows Phone.Deploy.0 = Release|Windows Phone
+		{399660A3-CA10-4451-88FC-4D946B1CB20A}.Debug|Windows Phone.ActiveCfg = Debug|Windows Phone
+		{399660A3-CA10-4451-88FC-4D946B1CB20A}.Release|Windows Phone.ActiveCfg = Release|Windows Phone
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
