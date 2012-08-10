@@ -20,7 +20,7 @@ namespace SeabattleMobile
 		public Grid(Game game)
 			: base(game)
 		{
-			// TODO: Construct any child components here
+
 		}
 
 		/// <summary>
