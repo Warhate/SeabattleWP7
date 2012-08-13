@@ -23,7 +23,9 @@ namespace SeabattleMobile
 		public int Order { get; set; }
 
 		Texture2D _texture;
-
+		byte _transperent = 255;
+		Color _color;
+		
 		public Texture2D Texture
 		{
 			get { return _texture; }
@@ -34,13 +36,31 @@ namespace SeabattleMobile
 			}
 		}
 
+		public byte Transperent
+		{
+			get { return _transperent; }
+			set
+			{
+				_transperent = value;
+				_color.A = value;
+			}
+		}
+
 		/// <summary>
 		/// Hotspot
 		/// </summary>
 		public Vector2 Origin { get; set; }
 		public Rectangle DestRect { get; set; }
 		public Rectangle SourceRect { get; set; }
-		public Color Color { get; set; }
+		public Color Color
+		{
+			get { return _color; }
+			set
+			{
+				_color = value;
+				_color.A = _transperent;
+			}
+		}
 		public SpriteEffects Effects { get; set; }
 		public float Rotation { get; set; }
 		public float LayerDeph { get; set; }
@@ -54,7 +74,7 @@ namespace SeabattleMobile
 		void Init(int width, int height)
 		{
 			Origin = new Vector2(width/2.0f,height/2.0f);
-			DestRect = new Rectangle(150,150,width,height);
+			DestRect = new Rectangle(0,0,width,height);
 			SourceRect = new Rectangle(0, 0, width, height);
 			Color = Color.White;
 			Rotation = MathHelper.ToRadians(180.0f);

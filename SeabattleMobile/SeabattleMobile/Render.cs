@@ -20,6 +20,7 @@ namespace SeabattleMobile
 		List<Sprite> _sprites = new List<Sprite>();
 		static Render _instance;
 		SpriteBatch _batch = null;
+		
 
 		public void AddSprite(Sprite sprite)
 		{
@@ -51,7 +52,7 @@ namespace SeabattleMobile
 
 		public override void Draw(GameTime gameTime)
 		{
-			_batch.Begin();
+			_batch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
 
 			foreach (var sprite in _sprites.Where(e=>e.Visible).OrderBy(e => e.Order))
 			{
