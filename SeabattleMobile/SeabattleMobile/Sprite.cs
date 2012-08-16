@@ -77,7 +77,7 @@ namespace SeabattleMobile
 			DestRect = new Rectangle(0,0,width,height);
 			SourceRect = new Rectangle(0, 0, width, height);
 			Color = Color.White;
-			Rotation = MathHelper.ToRadians(180.0f);
+			Rotation = MathHelper.ToRadians(0.0f);
 			Order = 0;
 			LayerDeph = 1.0f;
 			Visible = true;

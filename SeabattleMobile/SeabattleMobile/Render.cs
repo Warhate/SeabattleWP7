@@ -52,7 +52,7 @@ namespace SeabattleMobile
 
 		public override void Draw(GameTime gameTime)
 		{
-			_batch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
+			_batch.Begin(SpriteSortMode.Texture, BlendState.AlphaBlend);
 
 			foreach (var sprite in _sprites.Where(e=>e.Visible).OrderBy(e => e.Order))
 			{

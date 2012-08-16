@@ -18,9 +18,9 @@ namespace SeabattleMobile
 	public class Main : Game
 	{
 		GraphicsDeviceManager graphics;
-		Sprite _sprite = new Sprite();
-		Sprite _sprite2 = new Sprite();
+		Sprite _background = new Sprite();
 		Grid _mainGrid;
+
 		
 		public static Render Render { get; private set; }
 
@@ -61,15 +61,10 @@ namespace SeabattleMobile
 			_mainGrid = new Grid(this);
 			_mainGrid.Initialize();
 
-			_sprite.Texture = Content.Load<Texture2D>("spell_holy_greaterheal");
-			_sprite2.Texture = Content.Load<Texture2D>("spell_holy_greaterheal");
+			_background.Texture = Content.Load<Texture2D>("sand");
+			_background.Order = 1000;
+			//_background.DestRect = new Rectangle(0, 0, 900, 900);
 
-			_sprite.DestRect = new Rectangle(150,150,56,56);
-			_sprite2.DestRect = new Rectangle(150 + 5, 150 + 5, 56, 56);
-
-			_sprite2.Color = Color.Red;
-			//_sprite2.DestRect = new Rectangle(_sprite2.DestRect.X + 5, _sprite2.DestRect.Y + 5, _sprite2.DestRect.Width, _sprite2.DestRect.Height);
-			//_sprite2.SourceRect = new Rectangle(_sprite2.DestRect.X + 5, _sprite2.DestRect.Y + 5, _sprite2.DestRect.Width, _sprite2.DestRect.Height);
 		}
 
 		/// <summary>
@@ -91,25 +86,6 @@ namespace SeabattleMobile
 			// Allows the game to exit
 			if (GamePad.GetState(PlayerIndex.One).Buttons.Start == ButtonState.Pressed)
 				this.Exit();
-
-			TouchCollection touchCollection = TouchPanel.GetState();
-			foreach (TouchLocation tl in touchCollection)
-			{
-				if ((tl.State == TouchLocationState.Pressed)
-						|| (tl.State == TouchLocationState.Moved))
-				{
-					_sprite.Order = 12;
-					_sprite.Transperent = 150;
-					_sprite2.Order = 11;
-				}
-				else
-				{
-					_sprite.Order = 11;
-					_sprite.Transperent = 0;
-					_sprite2.Order = 12;
-				}
-			}
-
 			base.Update(gameTime);
 		}
 
@@ -119,7 +95,7 @@ namespace SeabattleMobile
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Draw(GameTime gameTime)
 		{
-			GraphicsDevice.Clear(Color.CornflowerBlue);
+			GraphicsDevice.Clear(Color.Gray);
 
 			base.Draw(gameTime);
 		}

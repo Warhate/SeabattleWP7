@@ -29,7 +29,7 @@ namespace SeabattleMobile
 		Texture2D _missTexture;
 		Texture2D _waterTexture;
 
-		int _gridSize = 32;
+		int _gridSize = 40;
 
 		public Vector2 Position { get; set; }
 
@@ -45,6 +45,7 @@ namespace SeabattleMobile
 		{
 			_blocks = new bool[GRID_SIZE, GRID_SIZE];
 			_gridSprites = new Sprite[GRID_SIZE,GRID_SIZE];
+			_stateSprites = new Sprite[GRID_SIZE,GRID_SIZE];
 			Position = new Vector2(50,50);
 		}
 
@@ -55,11 +56,17 @@ namespace SeabattleMobile
 		public override void Initialize()
 		{
 			_gridTexture = Game.Content.Load<Texture2D>("grid");
-			
+			_waterTexture = Game.Content.Load<Texture2D>("water");
+
 			for (int i = 0; i < _gridSprites.GetLength(0); i++)
 			{
 				for (int j = 0; j < _gridSprites.GetLength(1); j++)
 				{
+					_stateSprites[i,j] = new Sprite();
+					_stateSprites[i, j].Order = 2;
+					_stateSprites[i, j].Texture = _waterTexture;
+					_stateSprites[i, j].DestRect = new Rectangle(i * _gridSize + (int)Position.X, j * _gridSize + (int)Position.Y,
+																_gridSize, _gridSize);
 					_gridSprites[i, j] = new Sprite();
 					_gridSprites[i, j].Order = 500;
 					_gridSprites[i, j].Texture = _gridTexture;
